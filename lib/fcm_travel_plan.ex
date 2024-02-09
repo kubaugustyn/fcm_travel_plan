@@ -1,18 +1,5 @@
 defmodule FcmTravelPlan do
-  @moduledoc """
-  Documentation for `FcmTravelPlan`.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> FcmTravelPlan.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def read_input do
+    File.read("input.txt")
   end
 end

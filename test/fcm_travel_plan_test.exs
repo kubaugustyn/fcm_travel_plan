@@ -1,8 +1,8 @@
 defmodule FcmTravelPlanTest do
   use ExUnit.Case
-  doctest FcmTravelPlan
 
-  test "greets the world" do
-    assert FcmTravelPlan.hello() == :world
+  test "reads the input" do
+    {:ok, input} = FcmTravelPlan.read_input()
+    assert input
   end
 end
