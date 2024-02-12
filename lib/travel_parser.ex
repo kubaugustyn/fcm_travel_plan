@@ -1,4 +1,4 @@
-defmodule TravelParser do
+defmodule FcmTravelPlan.TravelParser do
   def parse(input) do
     [base_string | tail_input] =
       input

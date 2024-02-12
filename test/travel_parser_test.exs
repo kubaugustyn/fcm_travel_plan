@@ -1,4 +1,6 @@
-defmodule TravelParserTest do
+defmodule FcmTravelPlan.TravelParserTest do
+  alias FcmTravelPlan.TravelParser
+
   use ExUnit.Case
 
   @input """

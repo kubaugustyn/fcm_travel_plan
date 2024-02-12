@@ -1,4 +1,4 @@
-defmodule SegmentBuilder do
+defmodule FcmTravelPlan.SegmentBuilder do
   alias FcmTravelPlan.SegmentModels.Flight
   alias FcmTravelPlan.SegmentModels.Hotel
   alias FcmTravelPlan.SegmentModels.Train

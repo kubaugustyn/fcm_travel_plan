@@ -1,4 +1,4 @@
-defmodule InputValidator do
+defmodule FcmTravelPlan.InputValidator do
   def run(input) do
     [
       validate_base(input)
