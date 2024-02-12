@@ -36,7 +36,7 @@ defmodule FcmTravelPlan.SegmentBuilderTest do
              }
   end
 
-  test "correctly builds a list of segments" do
+  test "correctly builds a list of segments and sort it by departure/checkin date" do
     attrs = [
       "Flight SVQ 2023-03-02 06:40 -> BCN 09:10",
       "Train MAD 2023-02-17 17:00 -> SVQ 19:30",
@@ -44,11 +44,10 @@ defmodule FcmTravelPlan.SegmentBuilderTest do
     ]
 
     assert SegmentBuilder.build(attrs) == [
-             %Flight{
-               arrival: ~U[2023-03-02 09:10:00Z],
-               departure: ~U[2023-03-02 06:40:00Z],
-               destination: "BCN",
-               origin: "SVQ"
+             %Hotel{
+               checkin_date: ~U[2023-02-15 00:00:00Z],
+               checkout_date: ~U[2023-02-17 00:00:00Z],
+               localization: "MAD"
              },
              %Train{
                arrival: ~U[2023-02-17 19:30:00Z],
@@ -56,10 +55,11 @@ defmodule FcmTravelPlan.SegmentBuilderTest do
                destination: "SVQ",
                origin: "MAD"
              },
-             %Hotel{
-               checkin_date: ~U[2023-02-15 00:00:00Z],
-               checkout_date: ~U[2023-02-17 00:00:00Z],
-               localization: "MAD"
+             %Flight{
+               arrival: ~U[2023-03-02 09:10:00Z],
+               departure: ~U[2023-03-02 06:40:00Z],
+               destination: "BCN",
+               origin: "SVQ"
              }
            ]
   end

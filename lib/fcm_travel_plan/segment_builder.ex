@@ -5,6 +5,7 @@ defmodule FcmTravelPlan.SegmentBuilder do
 
   def build(segment_list) when is_list(segment_list) do
     Enum.map(segment_list, &build/1)
+    |> Enum.sort_by(&segment_mapper/1, DateTime)
   end
 
   def build(segment_string) do
@@ -50,4 +51,8 @@ defmodule FcmTravelPlan.SegmentBuilder do
     }
     |> Hotel.new!()
   end
+
+  defp segment_mapper(%Hotel{checkin_date: checkin_date}), do: checkin_date
+  defp segment_mapper(%Train{departure: departure}), do: departure
+  defp segment_mapper(%Flight{departure: departure}), do: departure
 end
