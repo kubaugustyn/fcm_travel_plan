@@ -31,7 +31,7 @@ defmodule TravelParserTest do
     assert parsed_content.base == "SVQ"
   end
 
-  test "correctly sorts out the reservations" do
+  test "correctly sorts out the travel segments" do
     parsed_content = TravelParser.parse(@input)
 
     assert parsed_content.travel_segments == [
