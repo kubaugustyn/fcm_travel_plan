@@ -16,9 +16,9 @@ defmodule FcmTravelPlan do
     TripPlaner.call(%{trip_type: Train, base: base, segments: travel_segments})
     |> Enum.map(&TripFormatter.to_string/1)
     |> Enum.join("\n\n")
+    |> Kernel.<>("\n")
     |> IO.puts()
 
-    IO.puts("\n")
 
     TripPlaner.call(%{trip_type: Flight, base: base, segments: travel_segments})
     |> Enum.map(&TripFormatter.to_string/1)
