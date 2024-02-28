@@ -65,3 +65,12 @@ You can reply to the email you received if you have any doubt.
 In order to submit your solution, create your own Git repository and send us by email when it is ready.
 
 Thank you very much for your time and good luck!
+
+
+### Implementation details
+I've assumed that we want to establish connections, meaning trip connections when delivery and arrival are in 24h window.
+This also means that last flight, `Flight from NYC to BOS at 2023-03-06 08:00 to 09:25`, is not included, because there is no connection or hotel, that we can use to reach this flight
+
+### How to run the script
+
+`mix run -e "FcmTravelPlan.process_input(\"file\")"`, example: `mix run -e "FcmTravelPlan.process_input(\"input.txt\")"`
