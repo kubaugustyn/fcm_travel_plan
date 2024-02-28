@@ -6,8 +6,8 @@ defmodule FcmTravelPlan do
   alias FcmTravelPlan.SegmentModels.Train
   alias FcmTravelPlan.SegmentModels.Flight
 
-  def process_input do
-    {:ok, input} = File.read("input.txt")
+  def process_input(filename) do
+    {:ok, input} = File.read(filename)
 
     %{base: base, travel_segments: travel_segments} = FcmTravelPlan.TravelParser.parse(input)
 
